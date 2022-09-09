@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Add CNAME from fastapi.ivanbicalho.com to "app-carta-fastapi.azurewebsites.net"
+
+az webapp config hostname add \
+    -g rg-carta \
+    --webapp-name app-carta-fastapi \
+    --hostname 'fastapi.ivanbicalho.com'

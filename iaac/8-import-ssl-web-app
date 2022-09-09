@@ -1,0 +1,7 @@
+#!/bin/sh
+
+az webapp config ssl import \
+    -g rg-carta \
+    -n app-carta-fastapi \
+    --key-vault $KEY_VAULT_ID \
+    --key-vault-certificate-name 'ivanbicalhocom'

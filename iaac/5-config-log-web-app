@@ -1,0 +1,9 @@
+#!/bin/sh
+
+az webapp log config \
+    -g rg-carta \
+    -n app-carta-fastapi \
+    --web-server-logging filesystem \
+    --docker-container-logging filesystem \
+    --application-logging filesystem
+

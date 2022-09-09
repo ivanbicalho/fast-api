@@ -1,0 +1,7 @@
+#!/bin/sh
+
+az webapp config set \
+    -g rg-carta \
+    -n app-carta-fastapi \
+    --ftps-state Disabled \
+    --always-on true

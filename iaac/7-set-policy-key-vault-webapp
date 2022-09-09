@@ -1,0 +1,9 @@
+#!/bin/sh
+
+az keyvault set-policy \
+    -n kv-ivan-bicalho \
+    --object-id 'e94c7be9-dcb2-439b-9d2b-3da2aa588e1d' \
+    --certificate-permissions get list \
+    --secret-permissions get list
+
+# PS: object-id 'e94c7be9-dcb2-439b-9d2b-3da2aa588e1d' = Microsoft.Azure.WebSites (az ad sp list --all -o table)

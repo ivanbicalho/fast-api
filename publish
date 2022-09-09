@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo 'building image...'
+docker build . -t ivanbicalho.azurecr.io/carta-fastapi --platform linux/amd64
+
+echo 'pushing image...'
+# TO LOGIN: docker login ivanbicalho.azurecr.io -u $AZURE_ACR_LOGIN -p $AZURE_ACR_PASSWORD
+docker push ivanbicalho.azurecr.io/carta-fastapi
+
+echo 'waiting for the image to be ready...'
+sleep 10
+
+echo 'restarting the web app...'
+az webapp restart \
+    -g rg-carta \
+    -n app-carta-fastapi

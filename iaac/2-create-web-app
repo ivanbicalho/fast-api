@@ -1,0 +1,10 @@
+#!/bin/sh
+
+az webapp create \
+    -g rg-carta \
+    -p plan-carta \
+    -n app-carta-fastapi \
+    --https-only true \
+    --deployment-container-image-name 'ivanbicalho.azurecr.io/carta-fastapi' \
+    --docker-registry-server-user $AZURE_ACR_LOGIN \
+    --docker-registry-server-password $AZURE_ACR_PASSWORD

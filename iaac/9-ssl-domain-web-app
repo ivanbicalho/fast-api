@@ -1,0 +1,9 @@
+#!/bin/sh
+
+thumbprint=$(az webapp config ssl list -g rg-carta --query '[0].thumbprint' -o tsv)
+
+az webapp config ssl bind \
+    -g rg-carta \
+    -n app-carta-fastapi \
+    --ssl-type SNI \
+    --certificate-thumbprint $thumbprint

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+az appservice plan create \
+    -g rg-carta \
+    -n plan-carta \
+    --is-linux \
+    -l eastus \
+    --sku B1
