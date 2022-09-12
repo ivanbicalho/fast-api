@@ -10,7 +10,7 @@ DESCRIPTION = """
 This is an example of an API written using python FastAPI framework<br>
 To see more details, check <a href="https://github.com/ivanbicalho/fast-api">this github project</a><br><br>
 See redoc instead of swagger: <a href="/redoc">go to redoc</a><br>
-See swagger instead of redoc: <a href="/docs">go to swagger</a><br><br>
+See swagger instead of redoc: <a href="/">go to swagger</a><br><br>
 To authenticate, click the AUTHORIZE button and enter these credentials:<br>
 username: admin<br>
 password: admin
@@ -25,7 +25,7 @@ app = FastAPI(
         "email": "ivan.bicalho@carta.com",
     },
     version="0.0.1",
-    docs_url="/docs",  # Swagger, None to disable
+    docs_url="/",  # Swagger, None to disable
     redoc_url="/redoc",  # Redoc, None to disable
 )
 
